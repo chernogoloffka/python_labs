@@ -1,4 +1,4 @@
-fio = input()
+fio = input('ФИО')
 fio = fio.strip()
 words = fio.split()
 letter1 = words[0][0].upper()
