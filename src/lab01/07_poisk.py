@@ -1,4 +1,4 @@
-s = input()
+s = input('in: ')
 i = 0
 while not s[i].isupper():
     i += 1
@@ -13,4 +13,4 @@ while pos < len(s) and s[pos] != '.':
     result += s[pos]
     pos += step
 result += "."
-print(result)
+print('out: ',result)
