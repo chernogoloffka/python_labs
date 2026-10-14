@@ -14,4 +14,4 @@
 
 ![Задание B](../../images/lab03/textstats.png)
 
-![Вывод](../../images/lab02/imagew1.png)
+![Вывод](../../images/lab03/imagew1.png)
