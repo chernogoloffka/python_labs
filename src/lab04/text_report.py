@@ -3,8 +3,8 @@ import sys
 from src.lab04.io_txt_csv import read_text, write_csv
 from src.lib.text import normalize, tokenize, count_freq, top_n
  
-IN_PATH = "data/input.txt"
-OUT_PATH = "data/report.csv"
+IN_PATH = "data/lab04/input.txt"
+OUT_PATH = "data/lab04/report.csv"
  
  
 def main() -> None:
