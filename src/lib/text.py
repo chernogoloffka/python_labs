@@ -1,14 +1,11 @@
 import re
 
-
 def normalize(text: str, *, casefold: bool = True, yo2e: bool = True) -> str:
     """
     Приводит строку к нормальному виду.
 
     casefold=True - casefold(), иначе lower().
     yo2e=True - заменяет ё/Ё на е/Е.
-    Управляющие символы (\\t, \\r, \\n) становятся пробелами,
-    повторяющиеся пробелы схлопываются в один, края обрезаются.
     """
     # сначала регистр, потом ё (иначе Ё останется)
     if casefold:
@@ -71,7 +68,7 @@ if __name__ == "__main__":
     assert freq == {"a": 3, "b": 2, "c": 1}
     assert top_n(freq, 2) == [("a", 3), ("b", 2)]
 
-    # тай-брейк по слову при равной частоте
+    # topn
     freq2 = count_freq(["bb", "aa", "bb", "aa", "cc"])
     assert freq2 == {"aa": 2, "bb": 2, "cc": 1}
     assert top_n(freq2, 2) == [("aa", 2), ("bb", 2)]
