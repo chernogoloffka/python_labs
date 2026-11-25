@@ -37,25 +37,23 @@ def validate_student(rec: dict) -> None:
             raise ValueError(f"{field}: значение должно быть непустой строкой")
 
     if not isinstance(rec["birthdate"], str):
-        raise ValueError("birthdate: значение должно быть строкой YYYY-MM-DD")
+        raise ValueError("Неверный формат даты")
 
     try:
         birth_date = date.fromisoformat(rec["birthdate"])
     except ValueError as exc:
-        raise ValueError(
-            "birthdate: ожидается существующая дата в формате YYYY-MM-DD"
-        ) from exc
+        raise ValueError("Неверный формат даты") from exc
 
     if birth_date.isoformat() != rec["birthdate"]:
-        raise ValueError("birthdate: ожидается формат YYYY-MM-DD")
+        raise ValueError("Неверный формат даты")
     if birth_date > date.today():
-        raise ValueError("birthdate: дата не может быть в будущем")
+        raise ValueError("Не может быть в будущем")
 
     gpa = rec["gpa"]
     if isinstance(gpa, bool) or not isinstance(gpa, (int, float)):
-        raise ValueError("gpa: значение должно быть числом, но не bool")
+        raise ValueError("Неверный формат GPA")
     if not 0 <= gpa <= 5:
-        raise ValueError("gpa: средний балл должен быть в диапазоне от 0 до 5")
+        raise ValueError("Неверный формат GPA")
 
 
 def student_age(rec: dict, today: date | None = None) -> int:
