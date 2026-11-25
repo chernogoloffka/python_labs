@@ -32,7 +32,7 @@ def write_csv(rows: list[tuple | list], path: str | Path,
             raise ValueError(f"строки разной длины: {row}")
  
     ensure_parent_dir(path)
-    with open(path, "w", encoding="utf-8", newline="") as f:
+    with open(path, "w", encoding="utf-8", newline="\r") as f:
         writer = csv.writer(f)
         if header is not None:
             writer.writerow(header)
